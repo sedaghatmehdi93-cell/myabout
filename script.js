@@ -11,6 +11,8 @@ let textIndex = 0;
 
 function typeWriter() {
 
+if (!typingText) return;
+
 if(textIndex < text.length){
 
 typingText.textContent += text.charAt(textIndex);
@@ -31,8 +33,9 @@ typeWriter();
 // ======================
 
 const menuBtn = document.getElementById("menuBtn");
-
 const menu = document.getElementById("menu");
+
+if(menuBtn && menu){
 
 menuBtn.addEventListener("click",()=>{
 
@@ -47,6 +50,8 @@ menu.style.display = "flex";
 }
 
 });
+
+}
 
 
 // ======================
@@ -116,76 +121,6 @@ skillObserver.observe(bar);
 
 
 // ======================
-// COUNTER ANIMATION
-// ======================
-
-const counters =
-document.querySelectorAll(".counter");
-
-const counterObserver =
-new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-let counter = entry.target;
-
-let target =
-parseFloat(counter.dataset.target);
-
-let current = 0;
-
-let increment =
-target / 100;
-
-function updateCounter(){
-
-current += increment;
-
-if(current < target){
-
-if(target % 1 !== 0){
-
-counter.textContent =
-current.toFixed(2);
-
-}else{
-
-counter.textContent =
-Math.floor(current);
-
-}
-
-requestAnimationFrame(updateCounter);
-
-}else{
-
-counter.textContent =
-target;
-
-}
-
-}
-
-updateCounter();
-
-}
-
-});
-
-},{
-threshold:.3
-});
-
-counters.forEach(counter=>{
-
-counterObserver.observe(counter);
-
-});
-
-
-// ======================
 // RGB CURSOR
 // ======================
 
@@ -206,15 +141,20 @@ document.addEventListener("mousemove",(e)=>{
 mouseX = e.clientX;
 mouseY = e.clientY;
 
+if(cursor){
+
 cursor.style.left =
 mouseX + "px";
 
 cursor.style.top =
 mouseY + "px";
+}
 
 });
 
 function animateTrail(){
+
+if(cursorTrail){
 
 trailX += (mouseX - trailX) * 0.15;
 trailY += (mouseY - trailY) * 0.15;
@@ -224,6 +164,7 @@ cursorTrail.style.left =
 
 cursorTrail.style.top =
 (trailY - 20) + "px";
+}
 
 requestAnimationFrame(animateTrail);
 
@@ -238,6 +179,8 @@ animateTrail();
 
 const canvas =
 document.getElementById("particles");
+
+if(canvas){
 
 const ctx =
 canvas.getContext("2d");
@@ -261,12 +204,11 @@ resizeCanvas
 
 const particles = [];
 
-for(let i=0;i<200;i++){
+for(let i=0;i<120;i++){
 
 particles.push({
 
 x:Math.random()*canvas.width,
-
 y:Math.random()*canvas.height,
 
 size:Math.random()*3+1,
@@ -295,9 +237,7 @@ p.y += p.speedY;
 if(p.y > canvas.height){
 
 p.y = 0;
-
-p.x =
-Math.random()*canvas.width;
+p.x = Math.random()*canvas.width;
 
 }
 
@@ -326,6 +266,8 @@ animateParticles
 
 animateParticles();
 
+}
+
 
 // ======================
 // ACTIVE NAVIGATION
@@ -335,9 +277,7 @@ const sections =
 document.querySelectorAll("section");
 
 const navLinks =
-document.querySelectorAll(
-".nav-links a"
-);
+document.querySelectorAll(".nav-links a");
 
 window.addEventListener(
 "scroll",
@@ -350,11 +290,10 @@ sections.forEach(section=>{
 const sectionTop =
 section.offsetTop - 150;
 
-if(
-window.scrollY >= sectionTop
-){
+if(window.scrollY >= sectionTop){
 
-current = section.getAttribute("id");
+current =
+section.getAttribute("id");
 
 }
 
@@ -365,7 +304,8 @@ navLinks.forEach(link=>{
 link.classList.remove("active");
 
 if(
-link.getAttribute("href") ===
+link.getAttribute("href")
+===
 "#" + current
 ){
 
@@ -380,11 +320,11 @@ link.classList.add("active");
 
 
 // ======================
-// FLOATING GLOW EFFECT
+// CARD RGB EFFECT
 // ======================
 
 document.querySelectorAll(
-".project-card,.interest-card,.setup-card"
+".interest-card,.setup-card,.achievement-card"
 )
 
 .forEach(card=>{
@@ -426,7 +366,7 @@ card.style.background =
 
 
 // ======================
-// SMOOTH PAGE LOAD
+// PAGE LOAD
 // ======================
 
 window.addEventListener(
