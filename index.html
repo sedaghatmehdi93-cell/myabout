@@ -1,4 +1,44 @@
-<!-- منو (Navbar) -->
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MSP | Mehdi Sedaghat Portfolio</title>
+
+<meta name="description" content="Portfolio of Mehdi Sedaghat (MSP)">
+<meta name="author" content="Mehdi Sedaghat">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- PARTICLE BACKGROUND -->
+<canvas id="particles"></canvas>
+
+<!-- RGB CURSOR -->
+<div id="cursor"></div>
+<div id="cursorTrail"></div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+MSP
+</div>
+
+<button class="menu-btn" id="menuBtn">
+☰
+</button>
 
 <ul class="nav-links" id="menu">
 
@@ -8,10 +48,39 @@
 <li><a href="#interests">علاقه‌ها</a></li>
 <li><a href="#achievements">دستاوردها</a></li>
 <li><a href="#setup">ستاپ</a></li>
-<li><a href="#contact">ارتباط با من</a></li>
+<li><a href="#contact">ارتباط</a></li>
 
 </ul>
 
+</nav>
+
+<!-- HERO -->
+
+<section id="hero" class="hero">
+
+<div class="hero-content">
+
+<h1 class="hero-title">
+Mehdi Sedaghat
+</h1>
+
+<h2 id="typingText"></h2>
+
+<div class="hero-buttons">
+
+<a href="#about" class="btn primary-btn">
+درباره من
+</a>
+
+<a href="#contact" class="btn secondary-btn">
+ارتباط با من
+</a>
+
+</div>
+
+</div>
+
+</section>
 
 <!-- ABOUT -->
 
@@ -25,18 +94,17 @@
 
 <p>
 
-سلام! من مهدی هستم.
+سلام!
 
-علاقه‌مند به تکنولوژی، هوش مصنوعی، گیمینگ، سخت‌افزار، برنامه‌نویسی و توسعه وب.
+من مهدی هستم؛ علاقه‌مند به تکنولوژی، هوش مصنوعی، گیمینگ، سخت‌افزار، برنامه‌نویسی و توسعه وب.
 
-همیشه در حال یادگیری مهارت‌های جدید و دنبال کردن تکنولوژی‌های روز دنیا هستم.
+همیشه در حال یادگیری مهارت‌های جدید و دنبال کردن فناوری‌های روز دنیا هستم.
 
 </p>
 
 </div>
 
 </section>
-
 
 <!-- SKILLS -->
 
@@ -49,41 +117,56 @@
 <div class="skills-grid">
 
 <div class="skill-card">
+
 <h3>برنامه نویسی</h3>
+
 <div class="progress">
 <div class="progress-fill" data-width="85"></div>
 </div>
+
 <span>85%</span>
+
 </div>
 
 <div class="skill-card">
+
 <h3>گیمر حرفه‌ای</h3>
+
 <div class="progress">
 <div class="progress-fill" data-width="95"></div>
 </div>
+
 <span>95%</span>
+
 </div>
 
 <div class="skill-card">
+
 <h3>تکنولوژی دان</h3>
+
 <div class="progress">
 <div class="progress-fill" data-width="95"></div>
 </div>
+
 <span>95%</span>
+
 </div>
 
 <div class="skill-card">
+
 <h3>عاشق ماشین</h3>
+
 <div class="progress">
 <div class="progress-fill" data-width="90"></div>
 </div>
+
 <span>90%</span>
+
 </div>
 
 </div>
 
 </section>
-
 
 <!-- INTERESTS -->
 
@@ -96,18 +179,24 @@
 <div class="card-grid">
 
 <div class="interest-card">🎮 Rust</div>
+
 <div class="interest-card">🎯 Counter Strike 2</div>
+
 <div class="interest-card">🔫 Call Of Duty Mobile</div>
+
 <div class="interest-card">🖥 PC Building Simulator 2</div>
+
 <div class="interest-card">💻 سخت افزار کامپیوتر</div>
+
 <div class="interest-card">🤖 هوش مصنوعی</div>
+
 <div class="interest-card">🌐 توسعه وب</div>
+
 <div class="interest-card">🚗 خودرو و ماشین</div>
 
 </div>
 
 </section>
-
 
 <!-- ACHIEVEMENTS -->
 
@@ -147,7 +236,6 @@
 
 </section>
 
-
 <!-- SETUP -->
 
 <section id="setup" class="section reveal">
@@ -184,7 +272,6 @@
 
 </section>
 
-
 <!-- CONTACT -->
 
 <section id="contact" class="section reveal">
@@ -211,13 +298,24 @@
 
 <div class="socials">
 
-<a href="#">bale </a>
-<a href="#">rubika</a>
-<a href="#">sourosh</a>
-<a href="#">eitta</a>
+<a href="#">GitHub</a>
+<a href="#">Discord</a>
+<a href="#">Telegram</a>
+<a href="#">Instagram</a>
 
 </div>
 
 </div>
 
 </section>
+
+<footer>
+
+تیر ۱۴۰۵ | Created by MSP
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
